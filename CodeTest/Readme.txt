@@ -1,0 +1,1 @@
+To run the program go to the directory and run ”java CodeTest”
