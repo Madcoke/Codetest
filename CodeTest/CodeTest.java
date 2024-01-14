@@ -6,6 +6,7 @@ import java.text.NumberFormat;
 
 public class CodeTest
 {
+   
    public static final String delimiter = ",";
    public static void read(String csvFile) {
       try {
@@ -22,7 +23,7 @@ public class CodeTest
          while((line = br.readLine()) != null ) {
                                      
             //Remove empty lines
-             if (!((line.isBlank()) || (line.length()<2))){
+             if (!((line.isEmpty()) || (line.length()<2))){
                  //Remove unwanted characters
                  if (line.contains("\"")){
                  line=line.replace("\"","");
@@ -52,7 +53,7 @@ public class CodeTest
                             //payments
                             case 2: {
                                 int years = Integer.parseInt(tempStr);
-                                System.out.printf("%-15s",years);
+                                System.out.printf("%-10s",years);
                                 payments = years*12;
                                 
                             }
@@ -69,7 +70,7 @@ public class CodeTest
                             System.out.printf("%-15s", tempStr);    
                         }
                         else if (LineNr==3){ 
-                            System.out.printf("%-15s%-15s", tempStr, "Monthly Payments");
+                            System.out.printf("%-10s%-5s", tempStr, "Monthly Payment");
                         
                         }
                         else{
